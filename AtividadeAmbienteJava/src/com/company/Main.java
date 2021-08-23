@@ -10,7 +10,7 @@ public class Main {
 
             switch (resp){
                 case 1:
-                    Menu.criarJSON();
+                    System.out.println("Teste 1");
                     break;
                 case 2:
                     System.out.println("Teste 2");
