@@ -1,10 +1,14 @@
 package com.company;
 
 public class Tarefa {
+    private int id;
     private String nome;
     private String detalhes;
     private String data;
-    private String classificação;
+    private int classificação;
+
+    public int getId() { return id; }
+    public void setId(int nome) { this.id = id; }
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
@@ -15,6 +19,6 @@ public class Tarefa {
     public String getData() { return data; }
     public void setData(String data) { this.data = data; }
 
-    public String getClassificação() { return classificação; }
-    public void setClassificação(String classificação) { this.classificação = classificação; }
+    public int getClassificação() { return classificação; }
+    public void setClassificação(int classificação) { this.classificação = classificação; }
 }
