@@ -16,8 +16,8 @@ import org.json.simple.parser.ParseException;
 public class SalvamentoJson {
 
     private String filepath = "./tarefas.json";
-    private List<Tarefa> listaTarefas = new ArrayList<Tarefa>();
-    private List<Classificacao> listaClassificacao = new ArrayList<Classificacao>();
+    static List<Tarefa> listaTarefas = new ArrayList<Tarefa>();
+    static List<Classificacao> listaClassificacao = new ArrayList<Classificacao>();
 
     public List<Tarefa> getTarefas() { return this.listaTarefas; }
     public List<Classificacao> getClassificacao() { return this.listaClassificacao; }
@@ -79,6 +79,7 @@ public class SalvamentoJson {
         {
             this.listaTarefas.clear();
             this.listaClassificacao.clear();
+            Menu.maiorID = 1;
 
             Object obj = jsonParser.parse(reader);
 
@@ -94,6 +95,9 @@ public class SalvamentoJson {
                 objTarefa.setData((String) tf.get("data"));
                 objTarefa.setDetalhes((String) tf.get("detalhes"));
                 objTarefa.setClassificação(((Long) tf.get("classificacao")).intValue());
+
+                if(((Long) tf.get("id")).intValue() > Menu.maiorID)
+                    Menu.maiorID = ((Long) tf.get("id")).intValue();
 
                 this.listaTarefas.add(objTarefa);
             }

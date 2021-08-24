@@ -9,24 +9,30 @@ public class Main {
     private static List<Classificacao> classificacoes = new ArrayList<Classificacao>();
 
     public static void main(String[] args) {
+        SalvamentoJson json = new SalvamentoJson(tarefas,classificacoes);
+        json.lerJsonTarefas();
+
         int resp = 0;
         do{
             Menu.exibeMenu();
-            resp = Menu.LerReposta();
+            resp = Menu.lerReposta();
 
             switch (resp){
                 case 1:
-                    System.out.println("Teste 1");
+                    Menu.adicionarTarefa();
                     break;
                 case 2:
-                    System.out.println("Teste 2");
+                    Menu.listarTarefasPorClassificacao();
+                    break;
+                case 3:
+                    System.out.println("Saindo...");
                     break;
             }
-        }while(resp != 2);
+        }while(resp != 3);
 
 
 
-        // ------------------------------ Teste de demonstração ---------------------------
+       /* // ------------------------------ Teste de demonstração ---------------------------
         // Objeto tarefa
         Tarefa tarefa = new Tarefa();
         tarefa.setId(2);
@@ -64,5 +70,6 @@ public class Main {
         System.out.println(classificacoes.get(1).getNomeClassificacao());
         System.out.println(tarefas.get(1).getNome());
         // ------------------------------------------------------------------------
+        */
     }
 }
