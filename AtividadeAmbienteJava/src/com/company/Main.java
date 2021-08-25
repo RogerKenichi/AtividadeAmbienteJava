@@ -25,10 +25,13 @@ public class Main {
                     Menu.listarTarefasPorClassificacao();
                     break;
                 case 3:
+                    Menu.removerTarefa();
+                    break;
+                case 4:
                     System.out.println("Saindo...");
                     break;
             }
-        }while(resp != 3);
+        }while(resp != 4);
 
 
 

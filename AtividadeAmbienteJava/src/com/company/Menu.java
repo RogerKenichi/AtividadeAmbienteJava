@@ -2,10 +2,7 @@ package com.company;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Menu {
 
@@ -15,7 +12,9 @@ public class Menu {
     {
         System.out.println("1- Adicionar nova tarefa");
         System.out.println("2- Listar tarefas por classificação");
-        System.out.println("3- Sair");
+        System.out.println("3- Remover Tarefa");
+        System.out.println("4- Sair");
+        System.out.println();
     }
 
     static int lerReposta(){
@@ -27,6 +26,7 @@ public class Menu {
             resposta = tryParseInt(sc.nextLine().trim(), -1);
         }while (resposta == -1);
 
+        System.out.println();
         return resposta;
     }
 
@@ -45,7 +45,7 @@ public class Menu {
 
         tarefa.setId(++Menu.maiorID);
 
-        System.out.println("Oque deve ser feito?");
+        System.out.println("\nOque deve ser feito?");
         tarefa.setNome(sc.nextLine().trim());
 
         System.out.println("Algum detalhe?");
@@ -82,6 +82,7 @@ public class Menu {
     static void listarClassificações(){
         int i = 0;
         System.out.println("Escolha uma classificação: ");
+        System.out.println();
         for(Classificacao classificacao : SalvamentoJson.listaClassificacao){
             i++;
             System.out.println(classificacao.getId() + " - " + classificacao.getNomeClassificacao());
@@ -100,8 +101,34 @@ public class Menu {
 
         for(Tarefa tarefa : SalvamentoJson.listaTarefas){
             if(tarefa.getClassificação() == idClassificacao)
-                System.out.println(tarefa.getNome() + " - " + tarefa.getDetalhes() + " - " + tarefa.getData());
+                System.out.println(tarefa.getId() + " - " +tarefa.getNome() + " - " + tarefa.getDetalhes() + " - " + tarefa.getData());
         }
+
+        System.out.println();
+    }
+
+    static void removerTarefa(){
+        Scanner sc = new Scanner(System.in);
+
+        int idTarefa;
+
+        do{
+            listarTarefasPorClassificacao();
+            System.out.println("Qual tarefa você quer remover?");
+            idTarefa = tryParseInt(sc.nextLine().trim(), -1);
+
+        }while (idTarefa == -1);
+
+        for (Tarefa tarefa: SalvamentoJson.listaTarefas) {
+            if(tarefa.getId() == idTarefa){
+                SalvamentoJson.listaTarefas.remove(tarefa);
+                break;
+            }
+        }
+
+        SalvamentoJson json = new SalvamentoJson(SalvamentoJson.listaTarefas,SalvamentoJson.listaClassificacao);
+        json.salvarJsonTarefas();
+
     }
 
 
