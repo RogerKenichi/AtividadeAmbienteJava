@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b8342ee-af61-4a9c-9972-35184ba95228" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tarefas.json" beforeDir="false" afterPath="$PROJECT_DIR$/tarefas.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,1 +1,47 @@
-{"tarefas":[{"data":"28\/08\/2021","nome":"Programar","classificacao":5,"id":1,"detalhes":"Menu"},{"data":"31\/08\/2021","nome":"Testar","classificacao":5,"id":2,"detalhes":"Menu"}],"classificacoes":[{"nomeclassificacao":"domestico","id":5}]}
+{
+    "tarefas": [
+        {
+            "data": "28\/08\/2021",
+            "nome": "Programar",
+            "classificacao": 3,
+            "id": 1,
+            "detalhes": "Menu"
+        },
+        {
+            "data": "31\/08\/2021",
+            "nome": "Treinar",
+            "classificacao": 5,
+            "id": 2,
+            "detalhes": "HIIT"
+        },
+        {
+            "data": "06/09\/2021",
+            "nome": "Curriculo",
+            "classificacao": 4,
+            "id": 3,
+            "detalhes": "Arrumar Curriculo"
+        }
+    ],
+    "classificacoes": [
+        {
+            "nomeclassificacao": "Padrao",
+            "id": 1
+        },
+        {
+            "nomeclassificacao": "Domestico",
+            "id": 2
+        },
+        {
+            "nomeclassificacao": "Estudos",
+            "id": 3
+        },
+        {
+            "nomeclassificacao": "Trabalho",
+            "id": 4
+        },
+        {
+            "nomeclassificacao": "Esportes",
+            "id": 5
+        }
+    ]
+}
