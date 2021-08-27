@@ -11,9 +11,10 @@ public class Menu {
     static void exibeMenu()
     {
         System.out.println("1- Adicionar nova tarefa");
-        System.out.println("2- Listar tarefas por classificação");
-        System.out.println("3- Remover Tarefa");
-        System.out.println("4- Sair");
+        System.out.println("2- Listar todas as tarefas");
+        System.out.println("3- Listar tarefas por classificação");
+        System.out.println("4- Remover Tarefa");
+        System.out.println("5- Sair");
         System.out.println();
     }
 
@@ -87,6 +88,14 @@ public class Menu {
             i++;
             System.out.println(classificacao.getId() + " - " + classificacao.getNomeClassificacao());
         }
+    }
+
+    static void listarTodasTarefas(){
+        for(Tarefa tarefa : SalvamentoJson.listaTarefas){
+            System.out.println(tarefa.getId() + " - " +tarefa.getNome() + " - " + tarefa.getDetalhes() + " - " + tarefa.getData());
+        }
+
+        System.out.println();
     }
 
     static void listarTarefasPorClassificacao(){

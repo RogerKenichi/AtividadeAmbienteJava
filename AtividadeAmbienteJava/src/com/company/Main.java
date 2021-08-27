@@ -22,16 +22,19 @@ public class Main {
                     Menu.adicionarTarefa();
                     break;
                 case 2:
-                    Menu.listarTarefasPorClassificacao();
+                    Menu.listarTodasTarefas();
                     break;
                 case 3:
-                    Menu.removerTarefa();
+                    Menu.listarTarefasPorClassificacao();
                     break;
                 case 4:
+                    Menu.removerTarefa();
+                    break;
+                case 5:
                     System.out.println("Saindo...");
                     break;
             }
-        }while(resp != 4);
+        }while(resp != 5);
 
 
 
